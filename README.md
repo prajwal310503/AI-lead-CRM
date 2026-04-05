@@ -47,7 +47,7 @@ C:\Users\YourName\Downloads\StartWebOS
 ### Step 2 — Set up Supabase
 
 1. Go to **https://app.supabase.com** and sign in
-2. Create a new project (or use existing `startos_v2`)
+2. Create a new project
 3. Wait for the project to finish setting up (~2 min)
 
 #### 2a. Run the database schema
