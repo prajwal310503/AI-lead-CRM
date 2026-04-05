@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Proposal from {{company_name}}</title>
+<style>
+  body { margin:0; padding:0; background:#0f0f0f; font-family:'Segoe UI',Arial,sans-serif; color:#e2e8f0; }
+  .wrapper { max-width:600px; margin:0 auto; padding:32px 16px; }
+  .header { background:linear-gradient(135deg,#FF6B35,#f97316); border-radius:16px 16px 0 0; padding:40px 32px; text-align:center; }
+  .header img { width:48px; height:48px; margin-bottom:12px; }
+  .header h1 { margin:0; font-size:28px; font-weight:700; color:#fff; letter-spacing:-0.5px; }
+  .header p { margin:8px 0 0; color:rgba(255,255,255,0.85); font-size:15px; }
+  .body { background:#1a1a2e; border-radius:0 0 16px 16px; padding:40px 32px; }
+  .greeting { font-size:17px; line-height:1.6; color:#cbd5e1; margin-bottom:28px; }
+  .greeting strong { color:#fff; }
+  .proposal-card { background:#0f172a; border:1px solid rgba(255,107,53,0.3); border-radius:12px; padding:24px; margin:24px 0; }
+  .proposal-card h2 { margin:0 0 8px; font-size:20px; color:#FF6B35; }
+  .proposal-card .meta { font-size:13px; color:#64748b; margin-bottom:16px; }
+  .services { margin:16px 0 0; }
+  .service-row { display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:14px; }
+  .service-row:last-child { border-bottom:none; }
+  .service-name { color:#e2e8f0; }
+  .service-price { color:#FF6B35; font-weight:600; }
+  .total-row { display:flex; justify-content:space-between; padding:16px 0 0; font-size:16px; font-weight:700; }
+  .total-label { color:#94a3b8; }
+  .total-value { color:#FF6B35; font-size:20px; }
+  .cta { text-align:center; margin:32px 0 24px; }
+  .btn { display:inline-block; background:linear-gradient(135deg,#FF6B35,#f97316); color:#fff; text-decoration:none; padding:14px 36px; border-radius:10px; font-size:16px; font-weight:600; letter-spacing:0.3px; }
+  .btn:hover { opacity:0.9; }
+  .valid { text-align:center; font-size:13px; color:#64748b; margin-bottom:24px; }
+  .footer { text-align:center; padding:24px 0 0; border-top:1px solid rgba(255,255,255,0.08); }
+  .footer p { font-size:12px; color:#475569; margin:4px 0; }
+  .footer a { color:#FF6B35; text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="header">
+    <h1>{{company_name}}</h1>
+    <p>Web &amp; Digital Agency</p>
+  </div>
+  <div class="body">
+    <div class="greeting">
+      Hi <strong>{{client_name}}</strong>,<br/><br/>
+      Thank you for your interest! We're excited to share our proposal for <strong>{{project_title}}</strong>. We've carefully tailored this to your specific goals and requirements.
+    </div>
+
+    <div class="proposal-card">
+      <h2>{{project_title}}</h2>
+      <div class="meta">Proposal #{{proposal_number}} &nbsp;·&nbsp; Prepared {{prepared_date}}</div>
+      <div class="services">
+        {{services_rows}}
+      </div>
+      <div class="total-row">
+        <span class="total-label">Total Investment</span>
+        <span class="total-value">{{currency}}{{total}}</span>
+      </div>
+    </div>
+
+    <div class="cta">
+      <a href="{{proposal_url}}" class="btn">View Full Proposal</a>
+    </div>
+    <div class="valid">This proposal is valid until <strong>{{valid_until}}</strong></div>
+
+    <div class="greeting" style="font-size:14px;color:#94a3b8;">
+      Have questions? Simply reply to this email or WhatsApp us. We're ready to discuss any aspect of the proposal and make it work perfectly for you.
+    </div>
+  </div>
+  <div class="footer">
+    <p>{{company_name}} &nbsp;·&nbsp; {{company_email}}</p>
+    <p><a href="{{company_website}}">{{company_website}}</a></p>
+    <p style="margin-top:12px;color:#334155;">You're receiving this because you requested a proposal from us.</p>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>You're invited to join {{company_name}}</title>
+<style>
+  body { margin:0; padding:0; background:#0f0f0f; font-family:'Segoe UI',Arial,sans-serif; color:#e2e8f0; }
+  .wrapper { max-width:580px; margin:0 auto; padding:32px 16px; }
+  .header { background:#1a1a2e; border-top:3px solid #0EA5E9; border-radius:12px 12px 0 0; padding:36px 32px; text-align:center; }
+  .avatar { width:64px; height:64px; background:linear-gradient(135deg,#FF6B35,#0EA5E9); border-radius:50%; display:inline-flex; align-items:center; justify-content:center; margin-bottom:16px; font-size:26px; font-weight:700; color:#fff; }
+  .header h1 { margin:0; font-size:24px; font-weight:700; color:#fff; }
+  .header p { margin:8px 0 0; color:#64748b; font-size:14px; }
+  .body { background:#1a1a2e; border-left:1px solid rgba(255,255,255,0.06); border-right:1px solid rgba(255,255,255,0.06); padding:36px 32px; }
+  .invite-msg { font-size:16px; line-height:1.7; color:#94a3b8; margin-bottom:28px; }
+  .invite-msg strong { color:#fff; }
+  .role-badge { display:inline-block; background:rgba(14,165,233,0.15); border:1px solid rgba(14,165,233,0.35); color:#0EA5E9; padding:6px 16px; border-radius:20px; font-size:13px; font-weight:600; letter-spacing:0.5px; text-transform:capitalize; margin-bottom:28px; }
+  .perks { background:#0f172a; border-radius:10px; padding:20px; margin-bottom:28px; }
+  .perks h3 { margin:0 0 14px; font-size:13px; text-transform:uppercase; letter-spacing:1px; color:#64748b; }
+  .perk { display:flex; align-items:flex-start; gap:10px; margin-bottom:10px; font-size:14px; color:#94a3b8; }
+  .perk:last-child { margin-bottom:0; }
+  .perk-dot { width:6px; height:6px; background:#0EA5E9; border-radius:50%; margin-top:7px; flex-shrink:0; }
+  .cta { text-align:center; margin:32px 0 24px; }
+  .btn { display:inline-block; background:linear-gradient(135deg,#0EA5E9,#0284c7); color:#fff; text-decoration:none; padding:14px 40px; border-radius:10px; font-size:16px; font-weight:700; }
+  .token-box { background:#0f172a; border-radius:8px; padding:14px 18px; margin-bottom:24px; text-align:center; }
+  .token-box .tl { font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#64748b; margin-bottom:6px; }
+  .token-box .tv { font-size:13px; font-family:monospace; color:#0EA5E9; word-break:break-all; }
+  .expiry { text-align:center; font-size:13px; color:#64748b; margin-bottom:24px; }
+  .expiry strong { color:#FF6B35; }
+  .footer { background:#1a1a2e; border:1px solid rgba(255,255,255,0.06); border-top:none; border-radius:0 0 12px 12px; padding:20px 32px; text-align:center; }
+  .footer p { font-size:12px; color:#475569; margin:4px 0; }
+  .footer a { color:#0EA5E9; text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="header">
+    <div class="avatar">{{name_initial}}</div>
+    <h1>You're invited!</h1>
+    <p>Join the {{company_name}} team on StartWebOS</p>
+  </div>
+
+  <div class="body">
+    <div class="invite-msg">
+      Hi <strong>{{member_name}}</strong>,<br/><br/>
+      <strong>{{invited_by}}</strong> from <strong>{{company_name}}</strong> has invited you to join their team as a <strong>{{role}}</strong>. Accept the invitation to get access to your workspace and start collaborating.
+    </div>
+
+    <div style="text-align:center;">
+      <span class="role-badge">{{role}}</span>
+    </div>
+
+    <div class="perks">
+      <h3>You'll have access to</h3>
+      <div class="perk"><div class="perk-dot"></div><span>Client management, leads, and project tracking</span></div>
+      <div class="perk"><div class="perk-dot"></div><span>Task boards and real-time collaboration tools</span></div>
+      <div class="perk"><div class="perk-dot"></div><span>AI-powered analysis and proposal generation</span></div>
+      <div class="perk"><div class="perk-dot"></div><span>Communication history and activity feeds</span></div>
+    </div>
+
+    <div class="cta">
+      <a href="{{invite_url}}" class="btn">Accept Invitation</a>
+    </div>
+
+    <div class="token-box">
+      <div class="tl">Or use this invite token at {{accept_url}}</div>
+      <div class="tv">{{invite_token}}</div>
+    </div>
+
+    <div class="expiry">This invitation expires on <strong>{{expires_at}}</strong></div>
+  </div>
+
+  <div class="footer">
+    <p>{{company_name}} &nbsp;·&nbsp; <a href="{{company_website}}">{{company_website}}</a></p>
+    <p style="margin-top:6px;color:#334155;">If you weren't expecting this invitation, you can safely ignore this email.</p>
+  </div>
+</div>
+</body>
+</html>

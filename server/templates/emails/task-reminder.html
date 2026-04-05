@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Task Reminder — {{company_name}}</title>
+<style>
+  body { margin:0; padding:0; background:#0f0f0f; font-family:'Segoe UI',Arial,sans-serif; color:#e2e8f0; }
+  .wrapper { max-width:580px; margin:0 auto; padding:32px 16px; }
+  .header { background:#1a1a2e; border-top:3px solid #FF6B35; border-radius:12px 12px 0 0; padding:28px 32px; display:flex; align-items:center; gap:16px; }
+  .icon { width:48px; height:48px; background:rgba(255,107,53,0.15); border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .icon svg { width:24px; height:24px; }
+  .header-text h1 { margin:0; font-size:20px; font-weight:700; color:#fff; }
+  .header-text p { margin:4px 0 0; font-size:13px; color:#64748b; }
+  .body { background:#1a1a2e; border-left:1px solid rgba(255,255,255,0.06); border-right:1px solid rgba(255,255,255,0.06); padding:32px; }
+  .greeting { font-size:15px; color:#94a3b8; margin-bottom:24px; line-height:1.6; }
+  .task-card { background:#0f172a; border:1px solid rgba(255,107,53,0.25); border-left:4px solid {{priority_color}}; border-radius:10px; padding:20px; margin-bottom:24px; }
+  .task-title { font-size:18px; font-weight:700; color:#fff; margin:0 0 8px; }
+  .task-meta { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:12px; }
+  .tag { display:inline-flex; align-items:center; gap:5px; background:rgba(255,255,255,0.05); border-radius:6px; padding:4px 10px; font-size:12px; color:#94a3b8; }
+  .tag.urgent { background:rgba(239,68,68,0.15); color:#ef4444; }
+  .tag.due-today { background:rgba(255,107,53,0.15); color:#FF6B35; }
+  .task-desc { font-size:14px; color:#64748b; line-height:1.6; }
+  .deadline-banner { background:rgba(255,107,53,0.1); border:1px solid rgba(255,107,53,0.3); border-radius:8px; padding:14px 18px; margin-bottom:24px; display:flex; align-items:center; gap:12px; }
+  .deadline-banner svg { width:20px; height:20px; color:#FF6B35; flex-shrink:0; }
+  .deadline-banner p { margin:0; font-size:14px; }
+  .deadline-banner strong { color:#FF6B35; }
+  .footer-body { background:#1a1a2e; border-radius:0 0 12px 12px; border:1px solid rgba(255,255,255,0.06); border-top:none; padding:20px 32px; text-align:center; }
+  .footer-body p { font-size:12px; color:#475569; margin:4px 0; }
+  .footer-body a { color:#FF6B35; text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="header">
+    <div class="icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+        <line x1="16" y1="2" x2="16" y2="6"/>
+        <line x1="8" y1="2" x2="8" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+        <polyline points="9 16 11 18 15 14"/>
+      </svg>
+    </div>
+    <div class="header-text">
+      <h1>Task Reminder</h1>
+      <p>{{company_name}} · {{today_date}}</p>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="greeting">
+      Hi <strong style="color:#fff;">{{assignee_name}}</strong>,<br/><br/>
+      This is a friendly reminder about a task assigned to you. Please review and update the status.
+    </div>
+
+    <div class="task-card">
+      <div class="task-title">{{task_title}}</div>
+      <div class="task-meta">
+        <span class="tag {{priority_class}}">{{priority}} Priority</span>
+        <span class="tag">Project: {{project_name}}</span>
+        <span class="tag {{due_class}}">Due: {{deadline}}</span>
+      </div>
+      {{task_description}}
+    </div>
+
+    <div class="deadline-banner">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="12 6 12 12 16 14"/>
+      </svg>
+      <p>Deadline: <strong>{{deadline}}</strong> &mdash; {{days_remaining}}</p>
+    </div>
+  </div>
+
+  <div class="footer-body">
+    <p>Login to <a href="{{app_url}}">StartWebOS</a> to update your task status.</p>
+    <p style="margin-top:8px;">{{company_name}} &nbsp;·&nbsp; {{company_email}}</p>
+  </div>
+</div>
+</body>
+</html>

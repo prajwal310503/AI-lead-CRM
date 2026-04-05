@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Welcome to {{company_name}} Client Portal</title>
+<style>
+  body { margin:0; padding:0; background:#0f0f0f; font-family:'Segoe UI',Arial,sans-serif; color:#e2e8f0; }
+  .wrapper { max-width:580px; margin:0 auto; padding:32px 16px; }
+  .header { background:linear-gradient(135deg,#FF6B35 0%,#f97316 50%,#0EA5E9 100%); border-radius:16px 16px 0 0; padding:48px 32px; text-align:center; }
+  .header h1 { margin:0; font-size:30px; font-weight:800; color:#fff; letter-spacing:-0.5px; }
+  .header p { margin:10px 0 0; color:rgba(255,255,255,0.88); font-size:16px; }
+  .body { background:#1a1a2e; border-radius:0 0 16px 16px; padding:40px 32px; }
+  .welcome-msg { font-size:16px; line-height:1.7; color:#94a3b8; margin-bottom:32px; }
+  .welcome-msg strong { color:#fff; }
+  .credentials { background:#0f172a; border:1px solid rgba(255,107,53,0.3); border-radius:12px; padding:24px; margin-bottom:32px; }
+  .credentials h3 { margin:0 0 16px; font-size:14px; text-transform:uppercase; letter-spacing:1px; color:#FF6B35; }
+  .cred-row { display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.06); }
+  .cred-row:last-child { border-bottom:none; }
+  .cred-label { font-size:13px; color:#64748b; }
+  .cred-val { font-size:14px; font-weight:600; color:#fff; background:#1a1a2e; padding:6px 12px; border-radius:6px; letter-spacing:0.5px; font-family:monospace; }
+  .features { margin-bottom:32px; }
+  .features h3 { font-size:14px; text-transform:uppercase; letter-spacing:1px; color:#94a3b8; margin-bottom:16px; }
+  .feature { display:flex; gap:14px; align-items:flex-start; margin-bottom:16px; }
+  .feature-icon { width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .feature-icon.orange { background:rgba(255,107,53,0.15); }
+  .feature-icon.blue { background:rgba(14,165,233,0.15); }
+  .feature-icon.green { background:rgba(16,185,129,0.15); }
+  .feature-text .title { font-size:14px; font-weight:600; color:#fff; margin-bottom:2px; }
+  .feature-text .desc { font-size:13px; color:#64748b; }
+  .cta { text-align:center; margin:36px 0 28px; }
+  .btn { display:inline-block; background:linear-gradient(135deg,#FF6B35,#f97316); color:#fff; text-decoration:none; padding:15px 40px; border-radius:10px; font-size:16px; font-weight:700; }
+  .security-note { background:rgba(14,165,233,0.08); border:1px solid rgba(14,165,233,0.2); border-radius:8px; padding:14px 18px; font-size:13px; color:#64748b; margin-bottom:24px; }
+  .security-note strong { color:#0EA5E9; }
+  .footer { text-align:center; padding-top:24px; border-top:1px solid rgba(255,255,255,0.08); }
+  .footer p { font-size:12px; color:#475569; margin:4px 0; }
+  .footer a { color:#FF6B35; text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="header">
+    <h1>Welcome to {{company_name}}</h1>
+    <p>Your client portal is ready</p>
+  </div>
+
+  <div class="body">
+    <div class="welcome-msg">
+      Hi <strong>{{client_name}}</strong>,<br/><br/>
+      We're thrilled to welcome you as a client of {{company_name}}. Your dedicated client portal is now active — a single place to track your projects, view invoices, and stay in sync with our team.
+    </div>
+
+    <div class="credentials">
+      <h3>Your Login Credentials</h3>
+      <div class="cred-row">
+        <span class="cred-label">Portal URL</span>
+        <span class="cred-val">{{portal_url}}</span>
+      </div>
+      <div class="cred-row">
+        <span class="cred-label">Email</span>
+        <span class="cred-val">{{client_email}}</span>
+      </div>
+      <div class="cred-row">
+        <span class="cred-label">Access Token</span>
+        <span class="cred-val">{{portal_token}}</span>
+      </div>
+    </div>
+
+    <div class="features">
+      <h3>What You Can Do</h3>
+      <div class="feature">
+        <div class="feature-icon orange">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </div>
+        <div class="feature-text">
+          <div class="title">Project Tracking</div>
+          <div class="desc">Monitor the live status and progress of all your active projects.</div>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon blue">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <div class="feature-text">
+          <div class="title">Invoices &amp; Payments</div>
+          <div class="desc">View and download all your invoices, and track payment history.</div>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon green">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+          </svg>
+        </div>
+        <div class="feature-text">
+          <div class="title">Task Updates</div>
+          <div class="desc">See which tasks are in progress and what's been completed.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta">
+      <a href="{{portal_url}}" class="btn">Access Your Portal</a>
+    </div>
+
+    <div class="security-note">
+      <strong>Security tip:</strong> Keep your access token private. Do not share it with anyone. If you believe it has been compromised, contact us immediately.
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>{{company_name}} &nbsp;·&nbsp; <a href="{{company_website}}">{{company_website}}</a></p>
+    <p>{{company_email}}</p>
+  </div>
+</div>
+</body>
+</html>
