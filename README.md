@@ -4,15 +4,11 @@ A full-stack CRM + Operations platform for digital agencies. Built with React 18
 
 ---
 
-## 🔐 Login Credentials
+## 🔐 Login
 
-| Field    | Value                    |
-|----------|--------------------------|
-| Email    | `startweb@gmail.com`     |
-| Password | `startweb@123`           |
-| URL      | http://localhost:5173/login |
+Use the credentials you created in Supabase → Authentication → Users.
 
-> **Backup credentials** (seed defaults): `deepak@startweb.cloud` / `Admin@StartWeb2026`
+Default login URL: http://localhost:5173/login
 
 ---
 
@@ -79,9 +75,7 @@ In Supabase → **Storage** → create these 7 buckets (all public):
 
 1. Supabase → **Authentication** → **Users**
 2. Click **Add user** → **Create new user**
-3. Enter:
-   - **Email:** `startweb@gmail.com`
-   - **Password:** `startweb@123`
+3. Enter your email and a secure password
 4. Click **Create user**
 
 ---
@@ -90,9 +84,9 @@ In Supabase → **Storage** → create these 7 buckets (all public):
 
 #### `server/.env`
 ```
-SUPABASE_URL=https://lqtijwhhofwecsuhmtdo.supabase.co
-SUPABASE_SERVICE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxxdGlqd2hob2Z3ZWNzdWhtdGRvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MjI4MDY4NCwiZXhwIjoyMDg3ODU2Njg0fQ.QUkiVHYqX7oRqYRtN2n9S3Xy9m3FJ7dvpcE--H3pMIE
-JWT_SECRET=startwebos_jwt_2026_deepak
+SUPABASE_URL=your_supabase_project_url
+SUPABASE_SERVICE_KEY=your_supabase_service_role_key
+JWT_SECRET=your_jwt_secret
 PORT=5000
 FRONTEND_URL=http://localhost:5173
 NODE_ENV=development
@@ -110,8 +104,8 @@ GOOGLE_MAPS_KEY=
 
 #### `client/.env`
 ```
-VITE_SUPABASE_URL=https://lqtijwhhofwecsuhmtdo.supabase.co
-VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxxdGlqd2hob2Z3ZWNzdWhtdGRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIyODA2ODQsImV4cCI6MjA4Nzg1NjY4NH0.XACYFKkDhfngefqYG-6y0QPUGnO7FrMDCLgCdaT6Wt4
+VITE_SUPABASE_URL=your_supabase_project_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 VITE_API_URL=http://localhost:5000
 ```
 
@@ -165,10 +159,7 @@ Then open **http://localhost:5173** in your browser.
 
 ## 🔑 Login
 
-| URL      | http://localhost:5173/login |
-|----------|-----------------------------|
-| Email    | `startweb@gmail.com`        |
-| Password | `startweb@123`              |
+Open **http://localhost:5173/login** and sign in with the user you created in Supabase.
 
 ---
 
@@ -198,7 +189,7 @@ Supabase free projects **pause after 1 week of inactivity**.
 1. Sign up at cron-job.org
 2. Create a new cronjob:
    - **Title:** `Supabase Keep Alive`
-   - **URL:** `https://lqtijwhhofwecsuhmtdo.supabase.co`
+   - **URL:** your Supabase project URL (found in Project Settings → API)
    - **Schedule:** Every day
 3. Save — done. Project will never pause again.
 
